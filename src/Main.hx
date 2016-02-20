@@ -5,6 +5,8 @@ import luxe.Color;
 import luxe.Camera;
 import luxe.Log.*;
 
+import snow.types.Types;
+
 class Main extends luxe.Game {
 
     var debug_text:luxe.Text;
@@ -37,28 +39,35 @@ class Main extends luxe.Game {
             point_size: 18
         });
 
-        var canvas = Luxe.core.app.runtime.window;
-        var s = 'window_size: (${js.Browser.window.innerWidth}, ${js.Browser.window.innerHeight})\n' +
-                'screen_size: (${Luxe.screen.w}, ${Luxe.screen.h})\n' +
-                'canvas_size: (${canvas.width}, ${canvas.height})\n' +
-                'client_size: (${canvas.clientWidth}, ${canvas.clientHeight})\n';
-
-        trace(s);
+        trace(get_sizes_string());
     } //ready
+
+    function get_sizes_string() {
+        var canvas = Luxe.core.app.runtime.window;
+        return
+'window_size: (${js.Browser.window.innerWidth}, ${js.Browser.window.innerHeight})
+screen_size: (${Luxe.screen.w}, ${Luxe.screen.h})
+canvas_size: (${canvas.width}, ${canvas.height})
+client_size: (${canvas.clientWidth}, ${canvas.clientHeight})';
+    }
+
+    function toggle_size_mode() {
+        var size = Luxe.camera.size;
+        Luxe.camera.size = size == null ? new Vector(375, 667) : null;
+    }
 
     override function onkeydown(e:luxe.KeyEvent) {
         if (e.keycode == Key.space) {
-            var size = Luxe.camera.size;
-            Luxe.camera.size = size == null ? new Vector(375, 667) : null;
+            toggle_size_mode();
         }
     }
 
-    override function update(dt:Float) {
-        var canvas = Luxe.core.app.runtime.window;
-        var s = 'window_size: (${js.Browser.window.innerWidth}, ${js.Browser.window.innerHeight})\n' +
-                'screen_size: (${Luxe.screen.w}, ${Luxe.screen.h})\n' +
-                'canvas_size: (${canvas.width}, ${canvas.height})\n' +
-                'client_size: (${canvas.clientWidth}, ${canvas.clientHeight})\n';
-        debug_text.text = s;
+    override function ontouchdown(e:luxe.TouchEvent) {
+        toggle_size_mode();
     }
+
+    override function update(dt:Float) {
+        debug_text.text = get_sizes_string();
+    }
+
 } //Main
