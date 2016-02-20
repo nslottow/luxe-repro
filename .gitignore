@@ -1,0 +1,50 @@
+.DS_Store
+
+#
+# Binaries
+#
+
+assets/
+bin/
+raw/
+
+#
+# Haxe
+#
+
+project.flow.hxml
+
+#
+# XCode
+#
+
+## Snow build files
+ios.project/project/libs/
+ios.project/project/assets/
+
+## TODO: Eventually I probably want to add these
+ios.project/project/Images.xcassets/
+
+## Build generated
+build/
+DerivedData
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
