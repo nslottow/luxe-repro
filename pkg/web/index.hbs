@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="favicon.png"/>
+		<meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <style>
+
+			html, body {
+				position: fixed;
+				height: 100%;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body, #app {
+				-webkit-tap-highlight-color:rgba(0,0,0,0);
+			}
+
+			#app {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+    </head>
+    <body>
+        {{#each project.app.web.libs~}}
+            <script type="text/javascript" src="{{this}}"></script>
+        {{/each}}
+        <script type="text/javascript" src="./{{project.app.name}}{{#if project.app.web.min}}.min{{/if}}.js"></script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+{
+  luxe:{
+    window: {
+      width:375,
+      height:667,
+      title:'luxe fullscreen test',
+      fullscreen:true,
+      resizable:true,
+      borderless:false
+    }
+  },
+
+  snow:{
+    config:{
+      config_path: '',
+      log: 2
+    }
+  },
+
+  project : {
+    name : 'luxe-fs-test',
+    version : '1.0.0',
+    author : 'nslottow',
+
+    app : {
+      name : 'luxe-fs-test',
+      package : 'com.nslottow.luxe-fs-test'
+    },
+
+    build : {
+      dependencies : {
+        luxe : '*',
+      }
+    },
+
+    files : {
+      assets : 'assets/',
+      index : {
+        path: 'pkg/web/index.hbs => index.html',
+        template: 'project',
+        not_listed: true
+      }
+    }
+  }
+}
