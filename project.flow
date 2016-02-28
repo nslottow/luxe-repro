@@ -3,7 +3,7 @@
     window: {
       width:375,
       height:667,
-      title:'luxe fullscreen test',
+      title:'luxe linc test',
       fullscreen:true,
       resizable:true,
       borderless:false
@@ -18,13 +18,13 @@
   },
 
   project : {
-    name : 'luxe-fs-test',
+    name : 'luxe-linc-test',
     version : '1.0.0',
     author : 'nslottow',
 
     app : {
-      name : 'luxe-fs-test',
-      package : 'com.nslottow.luxe-fs-test'
+      name : 'luxe-linc-test',
+      package : 'com.nslottow.luxe-linc-test'
     },
 
     build : {

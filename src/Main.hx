@@ -38,18 +38,7 @@ class Main extends luxe.Game {
             pos: new Vector(10, 80),
             point_size: 18
         });
-
-        trace(get_sizes_string());
     } //ready
-
-    function get_sizes_string() {
-        var canvas = Luxe.core.app.runtime.window;
-        return
-'window_size: (${js.Browser.window.innerWidth}, ${js.Browser.window.innerHeight})
-screen_size: (${Luxe.screen.w}, ${Luxe.screen.h})
-canvas_size: (${canvas.width}, ${canvas.height})
-client_size: (${canvas.clientWidth}, ${canvas.clientHeight})';
-    }
 
     function toggle_size_mode() {
         var size = Luxe.camera.size;
@@ -67,7 +56,6 @@ client_size: (${canvas.clientWidth}, ${canvas.clientHeight})';
     }
 
     override function update(dt:Float) {
-        debug_text.text = get_sizes_string();
     }
 
 } //Main
