@@ -4,7 +4,7 @@
       width:375,
       height:667,
       title:'luxe linc test',
-      fullscreen:true,
+      fullscreen:false,
       resizable:true,
       borderless:false
     }
@@ -30,6 +30,7 @@
     build : {
       dependencies : {
         luxe : '*',
+        linc_test : '*'
       }
     },
 

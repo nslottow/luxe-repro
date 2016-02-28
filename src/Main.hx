@@ -38,6 +38,8 @@ class Main extends luxe.Game {
             pos: new Vector(10, 80),
             point_size: 18
         });
+
+        linc_test.Test.say_hello();
     } //ready
 
     function toggle_size_mode() {
